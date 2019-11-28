@@ -36,8 +36,18 @@ public class DrawingPanel
 		terminate(myCurrentTool);
 		myCurrentTool = new GroupTool(this);
 		activate(myCurrentTool);
+                myDrawing.clearSelection();
+		repaint();
 	}
         
+        
+        void activateUngroupTool() {
+		terminate(myCurrentTool);
+		myCurrentTool = new UngroupTool(this);
+		activate(myCurrentTool);
+                myDrawing.clearSelection();
+		repaint();
+	}
 	void activateCircleTool() {
 		terminate(myCurrentTool);
 		myCurrentTool = new CircleTool(this);

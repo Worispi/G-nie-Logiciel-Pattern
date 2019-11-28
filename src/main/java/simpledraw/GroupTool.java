@@ -14,7 +14,7 @@ import java.awt.event.MouseEvent;
 
 /**
  * The tool to select, move and delete Shapes in the Drawing
- * @author Rémi Bastide
+ * @author bberruez
  * @version 1.0
  */
 
