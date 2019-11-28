@@ -22,7 +22,7 @@ public class UngroupTool
 		super(panel);
 	}
         
-        
         void draw(Graphics2D g) {
 	}
+        
 }        

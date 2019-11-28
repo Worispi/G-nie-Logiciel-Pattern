@@ -42,7 +42,6 @@ public class DrawingPanel
 		repaint();
 	}
         
-        
         void activateUngroupTool() {
 		terminate(myCurrentTool);
 		myCurrentTool = new UngroupTool(this);
@@ -50,6 +49,7 @@ public class DrawingPanel
                 myDrawing.clearSelection();
 		repaint();
 	}
+        
 	void activateCircleTool() {
 		terminate(myCurrentTool);
 		myCurrentTool = new CircleTool(this);

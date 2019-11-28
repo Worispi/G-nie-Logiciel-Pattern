@@ -48,7 +48,7 @@ public class MainFrame
 		mySelectButton.setToolTipText("Select and move shapes");
 		myCircleButton.setToolTipText("Draw a Circle");
                 myGroupButton.setToolTipText("Select and move multiple shapes");
-                myUngroupButton.setToolTipText("DeSelect grouped shapes");
+                myUngroupButton.setToolTipText("Deselect grouped shapes");
 		myLineButton.setToolTipText("Draw a Line");
 
 		getContentPane().add(buttonPanel, BorderLayout.NORTH);
