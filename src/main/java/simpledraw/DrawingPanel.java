@@ -32,6 +32,12 @@ public class DrawingPanel
 		activate(myCurrentTool);
 	}
 
+        void activateGroupTool() {
+		terminate(myCurrentTool);
+		myCurrentTool = new GroupTool(this);
+		activate(myCurrentTool);
+	}
+        
 	void activateCircleTool() {
 		terminate(myCurrentTool);
 		myCurrentTool = new CircleTool(this);

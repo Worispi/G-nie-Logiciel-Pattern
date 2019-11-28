@@ -23,6 +23,7 @@ public class MainFrame
 	JToggleButton mySelectButton = new JToggleButton("Select");
 	JToggleButton myLineButton = new JToggleButton("Line");
 	JToggleButton myCircleButton = new JToggleButton("Circle");
+        JToggleButton myGroupButton = new JToggleButton("Group");
 	DrawingPanel myDrawingPanel = new DrawingPanel();
 
 	/**Construct the frame*/
@@ -45,18 +46,22 @@ public class MainFrame
 		mySelectButton.setSelected(true);
 		mySelectButton.setToolTipText("Select and move shapes");
 		myCircleButton.setToolTipText("Draw a Circle");
+                myGroupButton.setToolTipText("Select and move multiple shapes");
 		myLineButton.setToolTipText("Draw a Line");
 
 		getContentPane().add(buttonPanel, BorderLayout.NORTH);
 		buttonPanel.add(mySelectButton, null);
 		buttonPanel.add(myLineButton, null);
 		buttonPanel.add(myCircleButton, null);
+                buttonPanel.add(myGroupButton, null);
+                
 		getContentPane().add(myDrawingPanel, BorderLayout.CENTER);
 
 		ButtonGroup buttonGroup = new ButtonGroup();
 		buttonGroup.add(mySelectButton);
 		buttonGroup.add(myLineButton);
 		buttonGroup.add(myCircleButton);
+                buttonGroup.add(myGroupButton);
 
 		setSize(new Dimension(400, 300));
 		setTitle("Simple Draw");
@@ -69,6 +74,14 @@ public class MainFrame
 		}
 		);
 
+                myGroupButton.addActionListener(
+			new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				myDrawingPanel.activateGroupTool();
+			}
+		}
+		);
+                
 		myLineButton.addActionListener(
 			new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
