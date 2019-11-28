@@ -30,6 +30,8 @@ public class DrawingPanel
 		terminate(myCurrentTool);
 		myCurrentTool = new SelectionTool(this);
 		activate(myCurrentTool);
+                myDrawing.clearSelection();
+		repaint();
 	}
 
         void activateGroupTool() {

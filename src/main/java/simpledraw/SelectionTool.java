@@ -34,6 +34,9 @@ public class SelectionTool
 	public void mousePressed(MouseEvent e) {
 		Shape pickedShape = myDrawing.pickShapeAt(e.getPoint());
 		myLastPoint = e.getPoint();
+                if (mySelectedShape != null) {
+			mySelectedShape.setSelected(false);
+                }        
 		mySelectedShape = pickedShape;
 		if (mySelectedShape != null) {
 			mySelectedShape.setSelected(true);
