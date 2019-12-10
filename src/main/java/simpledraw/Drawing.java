@@ -7,6 +7,7 @@ package simpledraw;
  * @see simpledraw.Shape
  */
 
+import Model.Shape;
 import java.util.*;
 
 import java.awt.Graphics2D;

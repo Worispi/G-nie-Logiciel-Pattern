@@ -1,5 +1,6 @@
 package simpledraw;
 
+import Model.Line;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics2D;

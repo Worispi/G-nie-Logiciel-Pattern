@@ -1,5 +1,7 @@
 package simpledraw;
 
+import Model.Shape;
+import Model.Line;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

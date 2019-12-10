@@ -4,6 +4,7 @@ package simpledraw;
  * The tool to create circles
  **/
 
+import Model.Circle;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics2D;
