@@ -1,7 +1,7 @@
 package Controller;
 
+import View.DrawingPanel;
 import Controller.DrawingTool;
-import Controller.DrawingPanel;
 import Model.Shape;
 import java.awt.Cursor;
 import java.awt.Graphics2D;
@@ -54,7 +54,7 @@ public class SelectionTool
 	}
 
 	public void mouseMoved(MouseEvent e) {
-		Shape pickedShape = myPanel.myDrawing.pickShapeAt(e.getPoint());
+		Shape pickedShape = myPanel.getMyDrawing().pickShapeAt(e.getPoint());
 		if (pickedShape != null) {
 			myPanel.setCursor(Cursor.getPredefinedCursor(Cursor.
 				HAND_CURSOR));
@@ -74,7 +74,7 @@ public class SelectionTool
 		}
 	}
 
-	void draw(Graphics2D g) {
+	public void draw(Graphics2D g) {
 	}
 
 }

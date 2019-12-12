@@ -1,7 +1,7 @@
 package Controller;
 
+import View.DrawingPanel;
 import Controller.DrawingTool;
-import Controller.DrawingPanel;
 import Model.Shape;
 import Model.Shape;
 import java.awt.Cursor;
@@ -26,7 +26,7 @@ public class UngroupTool
 		super(panel);
 	}
         
-        void draw(Graphics2D g) {
+        public void draw(Graphics2D g) {
 	}
         
 }        

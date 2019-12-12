@@ -4,6 +4,7 @@ package Controller;
  * The tool to create circles
  **/
 
+import View.DrawingPanel;
 import Model.Circle;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -58,7 +59,7 @@ public class CircleTool
         }
 
         @Override
-	void draw(Graphics2D g) {
+	public void draw(Graphics2D g) {
 		if (iAmActive) {
 			g.setColor(Color.red);
 			g.drawOval(

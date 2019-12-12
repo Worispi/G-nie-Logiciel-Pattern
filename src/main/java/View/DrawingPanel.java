@@ -1,6 +1,18 @@
-package Controller;
+package View;
 
 import Controller.CircleTool;
+import Controller.CircleTool;
+import Controller.CircleTool;
+import Controller.DrawingTool;
+import Controller.DrawingTool;
+import Controller.GroupTool;
+import Controller.GroupTool;
+import Controller.LineTool;
+import Controller.LineTool;
+import Controller.SelectionTool;
+import Controller.SelectionTool;
+import Controller.UngroupTool;
+import Controller.UngroupTool;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -90,5 +102,10 @@ public class DrawingPanel
             addMouseListener(t);
             addMouseMotionListener(t);
         }
+       
+       public Drawing getMyDrawing(){
+           return myDrawing;
+       }
+ 
 
 }

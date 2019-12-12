@@ -1,7 +1,7 @@
 package Controller;
 
+import View.DrawingPanel;
 import Controller.DrawingTool;
-import Controller.DrawingPanel;
 import Model.Line;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -61,7 +61,7 @@ public class LineTool
         }
         
         @Override
-	void draw(Graphics2D g) {
+	public void draw(Graphics2D g) {
 		if (iAmActive) {
 			g.setColor(Color.red);
 			g.drawLine(

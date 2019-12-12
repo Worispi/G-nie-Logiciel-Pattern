@@ -5,8 +5,8 @@
  */
 package Controller;
 
+import View.DrawingPanel;
 import Controller.DrawingTool;
-import Controller.DrawingPanel;
 import Model.Shape;
 import Model.Shape;
 import java.awt.Cursor;
@@ -15,6 +15,8 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * The tool to select, move and delete Shapes in the Drawing
@@ -24,7 +26,7 @@ import java.awt.event.MouseEvent;
 
 public class GroupTool 
 	extends DrawingTool {
-	private Shape mySelectedShape = null;
+	private List<Shape> mySelectedShapes;
 	private Point myLastPoint;
 
 	public GroupTool(DrawingPanel panel) {
@@ -33,22 +35,33 @@ public class GroupTool
 
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyChar() == KeyEvent.VK_DELETE) {
-			if (mySelectedShape != null) {
-				myDrawing.deleteShape(mySelectedShape);
+			if (mySelectedShapes != null) {
+                                for (int i =0; i < mySelectedShapes.size(); i++){
+				myDrawing.deleteShape(mySelectedShapes.get(i));
 				myPanel.repaint();
+                                }
 			}
 		}
 	}
 
 	public void mousePressed(MouseEvent e) {
-		Shape pickedShape = myDrawing.pickShapeAt(e.getPoint());        //problème
-		myLastPoint = e.getPoint();                                     //problème
-		mySelectedShape = pickedShape;                                  //problème : ne prend que la dernière forme en compte
-		if (mySelectedShape != null) {
-			mySelectedShape.setSelected(true);
-			myPanel.setCursor(Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR));
-		}
-		myPanel.repaint();
+		Shape pickedShape = myDrawing.pickShapeAt(e.getPoint()); 
+		myLastPoint = e.getPoint();
+                    if (pickedShape.isSelected() != true){
+                        if (mySelectedShapes==null){
+                            mySelectedShapes = new LinkedList<Shape>();
+                        }
+                        mySelectedShapes.add(pickedShape);
+                        myPanel.setCursor(Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR));  
+                    }
+                    else {
+                        mySelectedShapes.remove(pickedShape);
+                        if (mySelectedShapes.size()==0){
+                            myPanel.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));                        
+                        }
+                    }
+                    pickedShape.setSelected(!pickedShape.isSelected());
+                    myPanel.repaint();
 	}
 
 	public void mouseReleased(MouseEvent e) {
@@ -56,26 +69,27 @@ public class GroupTool
 	}
 
 	public void mouseMoved(MouseEvent e) {
-		Shape pickedShape = myPanel.myDrawing.pickShapeAt(e.getPoint());
+		Shape pickedShape = myPanel.getMyDrawing().pickShapeAt(e.getPoint());
 		if (pickedShape != null) {
 			myPanel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		} else {
+		} else { 
 			myPanel.setCursor(Cursor.getDefaultCursor());
 		}
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		if (mySelectedShape != null) {
-			mySelectedShape.translateBy(
+		if (mySelectedShapes != null) {
+			myLastPoint = e.getPoint();
+                    for (int i =0; i<mySelectedShapes.size() ; i++){
+			mySelectedShapes.get(i).translateBy(
 				e.getX() - myLastPoint.x,
 				e.getY() - myLastPoint.y
 				);
-			myLastPoint = e.getPoint();
         		myPanel.repaint();
+                    }
 		}
 	}
 
-	void draw(Graphics2D g) {
+	public void draw(Graphics2D g) {
 	}
-
 }

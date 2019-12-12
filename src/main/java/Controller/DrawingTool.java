@@ -1,6 +1,6 @@
 package Controller;
 
-import Controller.DrawingPanel;
+import View.DrawingPanel;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -20,14 +20,14 @@ public abstract class DrawingTool
 
 	DrawingTool(DrawingPanel panel) {
 		myPanel = panel;
-                myDrawing = panel.myDrawing;
+                myDrawing = panel.getMyDrawing();
 	}
 
 	/**
 	 * Draws this tool in the panel
 	 * @param g the graphics context to draw into
 	 */
-	abstract void draw(Graphics2D g);
+	public abstract void draw(Graphics2D g);
 
 	public void keyTyped(KeyEvent e) {
 	}
