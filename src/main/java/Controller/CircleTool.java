@@ -1,4 +1,4 @@
-package simpledraw;
+package Controller;
 
 /**
  * The tool to create circles

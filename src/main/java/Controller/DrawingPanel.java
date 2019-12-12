@@ -1,16 +1,18 @@
-package simpledraw;
+package Controller;
 
+import Controller.CircleTool;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JPanel;
+import Model.Drawing;
 
 /**
  * A Panel that displays a Drawing, and maintains a current DrawingTool<BR>
  * Uses the "State" design pattern
  * @author Rémi Bastide
  * @version 1.0
- * @see simpledraw.Drawing
+ * @see Model.Drawing
  * @see simpledraw.DrawingTool
  */
 

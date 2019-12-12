@@ -1,4 +1,4 @@
-package simpledraw;
+package Model;
 
 /**
  * Drawing, a collection of Shapes

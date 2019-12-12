@@ -1,5 +1,6 @@
-package simpledraw;
+package View;
 
+import Controller.DrawingPanel;
 import java.awt.AWTEvent;
 import java.awt.BorderLayout;
 import java.awt.Dimension;

@@ -1,5 +1,7 @@
-package simpledraw;
+package Controller;
 
+import Controller.DrawingTool;
+import Controller.DrawingPanel;
 import Model.Shape;
 import java.awt.Cursor;
 import java.awt.Graphics2D;

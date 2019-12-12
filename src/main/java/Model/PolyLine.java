@@ -1,4 +1,4 @@
-package simpledraw;
+package Model;
 
 import Model.Shape;
 import Model.Line;

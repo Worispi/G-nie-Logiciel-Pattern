@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simpledraw;
+package Controller;
 
+import Controller.DrawingTool;
+import Controller.DrawingPanel;
+import Model.Shape;
 import Model.Shape;
 import java.awt.Cursor;
 import java.awt.Graphics2D;

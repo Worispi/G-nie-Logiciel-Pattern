@@ -1,5 +1,7 @@
 package simpledraw;
 
+import View.MainFrame;
+
 /*
 Enoncé de l'exercice :
 
