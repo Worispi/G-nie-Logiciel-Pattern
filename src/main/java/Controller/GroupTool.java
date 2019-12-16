@@ -45,9 +45,10 @@ public class GroupTool
 	}
 
 	public void mousePressed(MouseEvent e) {
-		Shape pickedShape = myDrawing.pickShapeAt(e.getPoint()); 
-		myLastPoint = e.getPoint();
-                    if (pickedShape.isSelected() != true){
+		Shape pickedShape = myDrawing.pickShapeAt(e.getPoint());
+                if(pickedShape != null){
+                    myLastPoint = e.getPoint();
+                    if (pickedShape.isSelected() == false){
                         if (mySelectedShapes==null){
                             mySelectedShapes = new LinkedList<Shape>();
                         }
@@ -62,6 +63,7 @@ public class GroupTool
                     }
                     pickedShape.setSelected(!pickedShape.isSelected());
                     myPanel.repaint();
+                }
 	}
 
 	public void mouseReleased(MouseEvent e) {
@@ -79,14 +81,14 @@ public class GroupTool
 
 	public void mouseDragged(MouseEvent e) {
 		if (mySelectedShapes != null) {
-			myLastPoint = e.getPoint();
                     for (int i =0; i<mySelectedShapes.size() ; i++){
 			mySelectedShapes.get(i).translateBy(
 				e.getX() - myLastPoint.x,
 				e.getY() - myLastPoint.y
 				);
-        		myPanel.repaint();
                     }
+			myLastPoint = e.getPoint();
+        		myPanel.repaint();
 		}
 	}
 
