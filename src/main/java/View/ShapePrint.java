@@ -18,12 +18,12 @@ public class ShapePrint implements ShapeVisitor{
 
     @Override
     public void visit(Line line, Graphics2D g) {
-        System.out.println("ligne ajoutée au dessin");
+        System.out.println("ligne ajoutée ");
     }
 
     @Override
     public void visit(Circle circle, Graphics2D g) {
-        System.out.println("cercle ajouté au dessin");
+        System.out.println("cercle ajouté ");
     }
 
     @Override

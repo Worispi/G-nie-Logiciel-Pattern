@@ -35,6 +35,7 @@ public class LineTool
 			myFinalPoint = myInitialPoint;
 			myPanel.setCursor(Cursor.getPredefinedCursor(Cursor.
 				MOVE_CURSOR));
+                        System.out.println("Ligne ajoutée");
 			myPanel.repaint();
 		} else {
 			// Second point
@@ -71,5 +72,6 @@ public class LineTool
 				myFinalPoint.y
 				);
 		}
+                
 	}
 }
