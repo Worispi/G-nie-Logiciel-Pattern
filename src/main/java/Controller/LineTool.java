@@ -3,6 +3,7 @@ package Controller;
 import View.DrawingPanel;
 import Controller.DrawingTool;
 import Model.Line;
+import View.ToolVisitor;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics2D;
@@ -18,9 +19,9 @@ import java.awt.event.MouseEvent;
 
 public class LineTool
 	extends DrawingTool {
-	private boolean iAmActive = false;
-	private Point myInitialPoint;
-	private Point myFinalPoint;
+	public boolean iAmActive = false;
+	public Point myInitialPoint;
+	public Point myFinalPoint;
 
 	public LineTool(DrawingPanel panel) {
 		super(panel);
@@ -74,4 +75,7 @@ public class LineTool
 		}
                 
 	}
+        public void accept(ToolVisitor v, Graphics2D g){
+            v.visit(this, g);
+        }
 }

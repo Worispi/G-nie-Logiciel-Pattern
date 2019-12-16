@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import Model.Drawing;
+import View.ToolVisitor;
 
 /**
  * A Drawing tool in the drawing panel
@@ -17,6 +18,7 @@ public abstract class DrawingTool
 	implements KeyListener, MouseListener, MouseMotionListener {
 	DrawingPanel myPanel;
         Drawing myDrawing;
+        
 
 	DrawingTool(DrawingPanel panel) {
 		myPanel = panel;
@@ -59,4 +61,5 @@ public abstract class DrawingTool
 
 	public void mouseMoved(MouseEvent e) {
 	}
+        public abstract void accept(ToolVisitor v, Graphics2D g);
 }

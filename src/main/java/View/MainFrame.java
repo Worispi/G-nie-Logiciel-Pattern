@@ -1,5 +1,6 @@
 package View;
 
+import Model.Drawing;
 import java.awt.AWTEvent;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -11,6 +12,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Main Frame of SimpleDraw
@@ -26,6 +28,9 @@ public class MainFrame
         JToggleButton myGroupButton = new JToggleButton("Group");
         JToggleButton myUngroupButton = new JToggleButton("Ungroup");
 	DrawingPanel myDrawingPanel = new DrawingPanel();
+        
+         
+        Drawing myModel = new Drawing();
 
 	/**Construct the frame*/
 	public MainFrame() {
@@ -43,6 +48,9 @@ public class MainFrame
 		getContentPane().setLayout(new BorderLayout());
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
+                
+                JPanel container = new JPanel();
+                container.setLayout(new BorderLayout());
 
 		mySelectButton.setSelected(true);
 		mySelectButton.setToolTipText("Select and move shapes");
@@ -50,15 +58,26 @@ public class MainFrame
                 myGroupButton.setToolTipText("Select and move multiple shapes");
                 myUngroupButton.setToolTipText("Deselect grouped shapes");
 		myLineButton.setToolTipText("Draw a Line");
+                
+                
 
 		getContentPane().add(buttonPanel, BorderLayout.NORTH);
+                
 		buttonPanel.add(mySelectButton, null);
 		buttonPanel.add(myLineButton, null);
 		buttonPanel.add(myCircleButton, null);
                 buttonPanel.add(myGroupButton, null);
                 buttonPanel.add(myUngroupButton, null);
                 
+                
+                
 		getContentPane().add(myDrawingPanel, BorderLayout.CENTER);
+                
+              
+                
+                
+                
+                container.add(myDrawingPanel);
 
 		ButtonGroup buttonGroup = new ButtonGroup();
 		buttonGroup.add(mySelectButton);
@@ -66,9 +85,14 @@ public class MainFrame
 		buttonGroup.add(myCircleButton);
                 buttonGroup.add(myGroupButton);
                 buttonGroup.add(myUngroupButton);
+                                getContentPane().add(container);
+
 
 		setSize(new Dimension(400, 300));
 		setTitle("Simple Draw");
+                
+                
+                
 
 		mySelectButton.addActionListener(
 			new ActionListener() {

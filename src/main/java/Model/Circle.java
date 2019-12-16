@@ -1,5 +1,6 @@
 package Model;
 
+import View.ShapeVisitor;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -38,6 +39,10 @@ public class Circle
                 
 	}
 
+        public void accept(ShapeVisitor v, Graphics2D g){
+            v.visit(this, g);
+        }
+        
 	public void translateBy(int dx, int dy) {
 		myCenter.translate(dx, dy);
 	}

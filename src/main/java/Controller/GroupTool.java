@@ -9,6 +9,7 @@ import View.DrawingPanel;
 import Controller.DrawingTool;
 import Model.Shape;
 import Model.Shape;
+import View.ToolVisitor;
 import java.awt.Cursor;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -94,4 +95,9 @@ public class GroupTool
 
 	public void draw(Graphics2D g) {
 	}
+
+    @Override
+    public void accept(ToolVisitor v, Graphics2D g) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

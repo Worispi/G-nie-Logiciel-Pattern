@@ -8,6 +8,7 @@ package Model;
  */
 
 import Model.Shape;
+import View.DrawingView;
 import java.util.*;
 
 import java.awt.Graphics2D;
@@ -17,7 +18,8 @@ public class Drawing {
 	/**
 	 * A drawing is a collection of shapes
 	 */
-	private List<Shape> myShapes = new LinkedList<Shape>();
+	public List<Shape> myShapes = new LinkedList<Shape>();
+        private Set<DrawingView> myViews = new java.util.HashSet<DrawingView> ();
 
 	public Drawing() {
 	}
@@ -68,5 +70,23 @@ public class Drawing {
 	public void clearSelection() {
 		for (Shape s : myShapes)
 			s.setSelected(false);
+	}
+        public List<Shape> getShapes(){
+            return myShapes;
+        }
+        
+        public void addView(DrawingView l){
+            myViews.add(l);
+            l.notify(this);
+        }
+        
+        public void removeView(DrawingView l){
+            myViews.remove(l);
+        }
+        
+        protected void notifyViews() {
+		if (null != myViews) 
+			for (DrawingView view : myViews) 
+				view.notify(this);
 	}
 }

@@ -1,17 +1,10 @@
 package View;
 
 import Controller.CircleTool;
-import Controller.CircleTool;
-import Controller.CircleTool;
-import Controller.DrawingTool;
 import Controller.DrawingTool;
 import Controller.GroupTool;
-import Controller.GroupTool;
-import Controller.LineTool;
 import Controller.LineTool;
 import Controller.SelectionTool;
-import Controller.SelectionTool;
-import Controller.UngroupTool;
 import Controller.UngroupTool;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -29,7 +22,7 @@ import Model.Drawing;
  */
 
 public class DrawingPanel
-	extends JPanel {
+	extends JPanel implements DrawingView{
 	DrawingTool myCurrentTool;
 	Drawing myDrawing = new Drawing();
 
@@ -106,6 +99,11 @@ public class DrawingPanel
        public Drawing getMyDrawing(){
            return myDrawing;
        }
+
+    @Override
+    public void notify(Drawing model) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  
 
 }
