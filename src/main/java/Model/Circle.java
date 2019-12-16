@@ -13,6 +13,7 @@ public class Circle
 	extends Shape {
 	public Point myCenter;
 	public int myRadius;
+        static int nbCercle=0;
 
 	/**
 	 * Construct a Circle
@@ -22,8 +23,13 @@ public class Circle
 	public Circle(Point center, int radius) {
 		myCenter = center;
 		myRadius = radius;
+                nbCercle++;
 	}
 
+        public int getnbCercle(){
+            return nbCercle; 
+        }
+                
 	@Override
 	public void draw(Graphics2D g) {
 		g.setColor(
@@ -50,4 +56,5 @@ public class Circle
 	public boolean isPickedBy(Point p) {
 		return (Math.abs(myCenter.distance(p) - myRadius) <= 2);
 	}
+
 }

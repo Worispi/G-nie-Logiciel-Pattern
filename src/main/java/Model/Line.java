@@ -14,6 +14,7 @@ public class Line
 	extends Shape {
 	public Point myStart;
 	public Point myEnd;
+        static int nbLine=0;
 
 	/**
 	 * Construct a line
@@ -23,7 +24,12 @@ public class Line
 	public Line(Point start, Point end) {
 		myStart = start;
 		myEnd = end;
+                nbLine++;
 	}
+        
+        public int getnbLine(){
+            return nbLine;
+        }
 
 	public void draw(Graphics2D g) {
 		g.setColor(
@@ -72,4 +78,5 @@ public class Line
 		}
 		return (distance <= 2) && (lambda >= 0) && (lambda <= 1);
 	}
+
 }

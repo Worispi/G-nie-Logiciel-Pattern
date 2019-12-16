@@ -6,6 +6,7 @@ package Model;
  * @version 1.0
  */
 import View.ShapeDraw;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
@@ -51,4 +52,10 @@ public abstract class Shape {
     public void accept(ShapeDraw aThis, Graphics2D g) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public void setBackgroundColor(Color BLACK) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }

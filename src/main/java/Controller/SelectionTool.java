@@ -4,6 +4,7 @@ import View.DrawingPanel;
 import Controller.DrawingTool;
 import Model.Shape;
 import View.ToolVisitor;
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -40,6 +41,7 @@ public class SelectionTool
 		myLastPoint = e.getPoint();
                 if (mySelectedShape != null) {
 			mySelectedShape.setSelected(false);
+                        mySelectedShape.setBackgroundColor(Color.BLUE);
                 }        
 		mySelectedShape = pickedShape;
 		if (mySelectedShape != null) {
