@@ -5,6 +5,7 @@ package Model;
  * @author Rémi Bastide
  * @version 1.0
  */
+import View.ShapeDraw;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
@@ -46,4 +47,8 @@ public abstract class Shape {
 	 * @return true if <code>p</code> inside the shape, false otherwise
 	 */
 	abstract public boolean isPickedBy(Point p);
+
+    public void accept(ShapeDraw aThis, Graphics2D g) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

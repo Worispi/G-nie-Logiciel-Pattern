@@ -10,8 +10,8 @@ import java.awt.Point;
 
 public class Circle
 	extends Shape {
-	private Point myCenter;
-	private int myRadius;
+	public Point myCenter;
+	public int myRadius;
 
 	/**
 	 * Construct a Circle

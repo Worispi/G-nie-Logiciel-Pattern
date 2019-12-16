@@ -12,8 +12,8 @@ import java.awt.Point;
 
 public class Line
 	extends Shape {
-	private Point myStart;
-	private Point myEnd;
+	public Point myStart;
+	public Point myEnd;
 
 	/**
 	 * Construct a line
