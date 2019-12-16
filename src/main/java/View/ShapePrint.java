@@ -5,6 +5,9 @@
  */
 package View;
 
+import Model.Circle;
+import Model.Line;
+import Model.ShapeGroup;
 import java.awt.Graphics2D;
 
 /**
@@ -27,6 +30,8 @@ public class ShapePrint implements ShapeVisitor{
     public void visit(ShapeGroup group, Graphics2D g) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
     
     
 }
